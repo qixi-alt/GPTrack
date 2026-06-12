@@ -1,3 +1,12 @@
+# GPTrack
+
+## LasHeR Result Comparison
+
+The following OPE curves compare GPTrack with representative RGB-T trackers on the LasHeR testing set.
+
+![LasHeR comparison curves](assets/lasher_curve.png)
+
+[View the original PDF](assets/lasher_curve.pdf)
 
 ## Highlights
 
@@ -9,19 +18,18 @@
 
 ```text
 GPTrack/
-├── experiments/gptrack/        # Training and evaluation configs
+├── assets/                    # README figures and result curves
+├── experiments/gptrack/       # Training and evaluation configs
 ├── lib/
-│   ├── config/gptrack/         # Default GPTrack configuration
-│   ├── models/gptrack/         # GPTrack model and backbone modules
-│   ├── train/                  # Training actors, datasets, and trainers
-│   └── test/                   # Evaluation and tracker wrappers
-├── pretrained_models/          # Pretrained weights
-└── tracking/                   # Training, testing, and analysis entry points
+│   ├── config/gptrack/        # GPTrack configuration
+│   ├── models/gptrack/        # Model builder and tracking utilities
+│   ├── train/                 # Training actors, datasets, and trainers
+│   └── test/                  # Evaluation datasets and tracker wrappers
+├── pretrained_models/         # Local pretrained weights
+└── tracking/                  # Training, testing, and analysis entry points
 ```
 
 ## Installation
-
-Create the environment and install the required dependencies:
 
 ```bash
 conda create -n gptrack python=3.8
@@ -29,15 +37,18 @@ conda activate gptrack
 bash install.sh
 ```
 
-## Project Path Setup
+## Path Setup
 
 Initialize local paths for datasets, checkpoints, and results:
 
 ```bash
-python tracking/create_default_local_file.py --workspace_dir . --data_dir ./data --save_dir ./output
+python tracking/create_default_local_file.py \
+  --workspace_dir . \
+  --data_dir ./data \
+  --save_dir ./output
 ```
 
-After initialization, paths can be adjusted in:
+You can further customize paths in:
 
 ```text
 lib/train/admin/local.py
@@ -46,7 +57,7 @@ lib/test/evaluation/local.py
 
 ## Data Preparation
 
-Place RGB-T datasets under `./data`. For LasHeR, the expected structure is:
+Place RGB-T datasets under `./data`. For LasHeR, the expected layout is:
 
 ```text
 data/
@@ -59,16 +70,17 @@ data/
 
 ## Pretrained Weights
 
-Download the SOT pretrained weights and place them in:
+Place pretrained weights under:
 
 ```text
 pretrained_models/
 ```
 
+The default configs expect SOT/ViT initialization weights to be available locally.
 
 ## Training
 
-Train GPTrack on LasHeR with the SOT initialization config:
+Train GPTrack on LasHeR:
 
 ```bash
 python tracking/train.py \
@@ -79,7 +91,7 @@ python tracking/train.py \
   --nproc_per_node 4
 ```
 
-Available configs are located in:
+Available experiment configs are stored in:
 
 ```text
 experiments/gptrack/
@@ -107,16 +119,15 @@ python tracking/analysis_results.py \
   --dataset_name lasher_test
 ```
 
+## Core Components
 
+- `lib/models/gptrack/gptrack.py`: GPTrack model builder and tracking wrapper.
+- `lib/models/gptrack/utils.py`: token conversion utilities and multi-relation edge construction.
+- `experiments/gptrack/`: configuration files for training and evaluation.
 
-## Model Components
+## Maintainer
 
-The core GPTrack implementation is organized around:
-
-- `lib/models/gptrack/gptrack.py`: tracker wrapper and model builder.
-- `lib/models/gptrack/vit_gptrack_backbone.py`: ViT backbone with GSCA and MRTG modules.
-- `lib/models/gptrack/utils.py`: token conversion utilities and multi-relational edge construction.
-
+Yutong Li
 
 ## Citation
 

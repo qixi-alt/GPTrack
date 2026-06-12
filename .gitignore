@@ -27,3 +27,5 @@ __pycache__/
 
 # User-requested exclusion
 lib/models/gptrack/vit_gptrack_backbone.py
+lib/models/gptrack/utils.py
+
