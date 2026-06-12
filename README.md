@@ -122,6 +122,7 @@ python tracking/analysis_results.py \
 ## 🧱 Core Components
 
 - `lib/models/gptrack/gptrack.py`: GPTrack model builder and tracking wrapper.
+- `lib/models/gptrack/vit_gptrack_backbone.py`: Main implementation of GSCA and MRTG details within the ViT backbone.
 - `lib/models/gptrack/utils.py`: token conversion utilities and multi-relation edge construction.
 - `experiments/gptrack/`: configuration files for training and evaluation.
 
