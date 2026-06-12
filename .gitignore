@@ -1,0 +1,29 @@
+# Local data and outputs
+data/
+output/
+outputs/
+tensorboard/
+RGBT_workspace*/
+
+# Model weights and large artifacts
+pretrained_models/
+pretrained_networks/
+*.pth
+*.pth.tar
+*.pt
+*.ckpt
+*.tar
+*.zip
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+
+# User-requested exclusion
+lib/models/gptrack/vit_gptrack_backbone.py
