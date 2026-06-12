@@ -9,26 +9,9 @@ from pycocotools.coco import COCO
 
 
 class MSCOCO(BaseImageDataset):
-    """ The COCO object detection dataset.
+    """COCO dataset loader.
 
-    Publication:
-        Microsoft COCO: Common Objects in Context.
-        Tsung-Yi Lin, Michael Maire, Serge J. Belongie, Lubomir D. Bourdev, Ross B. Girshick, James Hays, Pietro Perona,
-        Deva Ramanan, Piotr Dollar and C. Lawrence Zitnick
-        ECCV, 2014
-        https://arxiv.org/pdf/1405.0312.pdf
-
-    Download the images along with annotations from http://cocodataset.org/#download. The root folder should be
-    organized as follows.
-        - coco_root
-            - annotations
-                - instances_train2014.json
-                - instances_train2017.json
-            - images
-                - train2014
-                - train2017
-
-    Note: You also have to install the coco pythonAPI from https://github.com/cocodataset/cocoapi.
+    Author: Yutong Li
     """
 
     def __init__(self, root=None, image_loader=jpeg4py_loader, data_fraction=None, min_area=None,

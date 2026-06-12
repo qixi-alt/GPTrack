@@ -382,13 +382,6 @@ class VisTracking(VisBase):
         for i, mask in enumerate(self.raw_data[2], 1):
             disp_image = overlay_mask(disp_image, mask * i)
 
-        # import os
-        # write_img = disp_image.copy()
-        # write_img = write_img[:, :, ::-1]
-        # # cv2.imwrite(os.path.join('/home/yebotao/test', str(self.count).zfill(3) + '.jpg'), write_img)
-        # cv2.imwrite(os.path.join('/home/yebotao/test', self.raw_data[3]['caption'].split('_')[-1] + '.jpg'), write_img)
-        # self.count += 1
-
         disp_image = numpy_to_torch(disp_image).squeeze(0)
         disp_image = disp_image.float()
 

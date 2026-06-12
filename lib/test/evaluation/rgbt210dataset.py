@@ -5,12 +5,9 @@ import os
 
 
 class RGBT210Dataset(BaseDataset):
-    """ RGBT210 dataset for RGB-T tracking.
+    """RGBT210 evaluation dataset loader.
 
-    Publication:
-        RGBT234:Weighted Sparse Representation Regularized Graph Learning for RGB-T Object Tracking
-        Chenglong Li, Nan Zhao, Yijuan Lu, Chengli Zhu, Jin Tang
-    Download dataset from:http://chenglongli.cn/code-dataset/
+    Author: Yutong Li
     """
     def __init__(self):
         super().__init__()

@@ -12,14 +12,9 @@ from lib.train.admin import env_settings
 
 
 class LasHeR(BaseVideoDataset):
-    """ LasHeR dataset for RGB-T tracking.
+    """LasHeR dataset loader for RGB-T tracking.
 
-    Publication:
-        LasHeR: A Large-scale High-diversity Benchmark for RGBT Tracking
-        Chenglong Li, Wanlin Xue, Yaqing Jia, Zhichen Qu, Bin Luo, Jin Tang, and Dengdi Sun
-        https://arxiv.org/abs/2104.13202
-
-    Download dataset from https://github.com/BUGPLEASEOUT/LasHeR
+    Author: Yutong Li
     """
 
     def __init__(self, root=None, image_loader=jpeg4py_loader, split=None, seq_ids=None, data_fraction=None):

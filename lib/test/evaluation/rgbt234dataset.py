@@ -5,13 +5,9 @@ import os
 
 
 class RGBT234Dataset(BaseDataset):
-    """ RGBT234 dataset for RGB-T tracking.
+    """RGBT234 evaluation dataset loader.
 
-    Publication:
-        RGBT234:RGB-T Object Tracking: Benchmark and Baseline
-        Chenglong Li, Xinyan Liang, Yijuan Lu, Nan Zhao, and Jin Tang
-        https://arxiv.org/pdf/1805.08982.pdf
-    Download dataset from: https://pan.baidu.com/share/init?surl=weaiBh0_yH2BQni5eTxHgg
+    Author: Yutong Li
     """
     def __init__(self):
         super().__init__()

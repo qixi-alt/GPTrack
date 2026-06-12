@@ -5,13 +5,9 @@ import os
 
 
 class VTUAVDataset(BaseDataset):
-    """ VTUAV dataset for RGB-T tracking.
+    """VTUAV evaluation dataset loader.
 
-    Publication:
-        VTUAV: VTUAV--Visible-Thermal UAV Tracking: A Large-Scale Benchmark and New Baseline
-        Pengyu Zhang 1      Jie Zhao 1      Dong Wang 1       Huchuan Lu 1,2      Xiang Ruan 3
-        https://arxiv.org/pdf/2204.04120.pdf
-    Download dataset from:https://zhang-pengyu.github.io/DUT-VTUAV/
+    Author: Yutong Li
     """
     def __init__(self):
         super().__init__()

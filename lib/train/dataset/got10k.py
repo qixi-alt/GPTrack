@@ -12,15 +12,9 @@ from lib.train.admin import env_settings
 
 
 class Got10k(BaseVideoDataset):
-    """ GOT-10k dataset.
+    """GOT-10k dataset loader.
 
-    Publication:
-        GOT-10k: A Large High-Diversity Benchmark for Generic Object Tracking in the Wild
-        Lianghua Huang, Xin Zhao, and Kaiqi Huang
-        arXiv:1810.11981, 2018
-        https://arxiv.org/pdf/1810.11981.pdf
-
-    Download dataset from http://got-10k.aitestunion.com/downloads
+    Author: Yutong Li
     """
 
     def __init__(self, root=None, image_loader=jpeg4py_loader, split=None, seq_ids=None, data_fraction=None):

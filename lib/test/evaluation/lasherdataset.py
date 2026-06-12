@@ -5,14 +5,9 @@ import os
 
 
 class LasHeRDataset(BaseDataset):
-    """ LasHeR dataset for RGB-T tracking.
+    """LasHeR evaluation dataset loader.
 
-    Publication:
-        LasHeR: A Large-scale High-diversity Benchmark for RGBT Tracking
-        Chenglong Li, Wanlin Xue, Yaqing Jia, Zhichen Qu, Bin Luo, Jin Tang, and Dengdi Sun
-        https://arxiv.org/abs/2104.13202
-
-    Download dataset from https://github.com/BUGPLEASEOUT/LasHeR
+    Author: Yutong Li
     """
     def __init__(self, split):
         super().__init__()

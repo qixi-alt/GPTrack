@@ -1,8 +1,6 @@
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
-"""
-Misc functions, including distributed helpers.
+"""Distributed training utilities.
 
-Mostly copy-paste from torchvision references.
+Author: Yutong Li
 """
 import os
 import subprocess

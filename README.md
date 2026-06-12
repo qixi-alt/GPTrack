@@ -1,9 +1,9 @@
 
 ## Highlights
 
-- **Geometry-Saliency Cross-Attention (GSCA):** integrate imaging-inspired physical guidance into cross-modal interaction.
-- **Multi-Relation Topology Graph (MRTG):** builds spatial, cross-modal, and semantic edges for graph-enhanced RGB-T representation learning.
-- **LasHeR-ready Training and Evaluation:** includes experiment configs and scripts for RGB-T tracking workflows.
+- **Geometry-Saliency Cross-Attention (GSCA):** Integrates imaging-inspired guidance into cross-modal interaction.
+- **Multi-Relation Topology Graph (MRTG):** Builds spatial, cross-modal, and semantic edges for graph-enhanced RGB-T representation learning.
+- **LasHeR-ready Training and Evaluation:** Provides experiment configs and scripts for RGB-T tracking workflows.
 
 ## Repository Structure
 
@@ -117,9 +117,6 @@ The core GPTrack implementation is organized around:
 - `lib/models/gptrack/vit_gptrack_backbone.py`: ViT backbone with GSCA and MRTG modules.
 - `lib/models/gptrack/utils.py`: token conversion utilities and multi-relational edge construction.
 
-## Acknowledgements
-
-This project is developed based on [OSTrack](https://github.com/botaoye/OSTrack). We thank the OSTrack authors for their excellent work and open-source contribution.
 
 ## Citation
 

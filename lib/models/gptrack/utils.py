@@ -102,9 +102,6 @@ def window_reverse(windows, window_size: int, H: int, W: int):
     x = x.permute(0, 1, 3, 2, 4, 5).contiguous().view(B, H, W, -1)
     return x
 
-'''
-add token transfer to feature
-'''
 def token2feature(tokens):
     B,L,D=tokens.shape
     H=W=int(L**0.5)
@@ -112,9 +109,6 @@ def token2feature(tokens):
     return x
 
 
-'''
-feature2token
-'''
 def feature2token(x):
     if isinstance(x, tuple):
         x = x[0]  # Keep only the tensor part.
@@ -122,8 +116,6 @@ def feature2token(x):
     L = W*H
     tokens = x.view(B, C, L).permute(0, 2, 1).contiguous()
     return tokens
-
-# ------------------------------------------------------------------------------------
 
 def build_grid_edge_index(H, W, device):
     """
@@ -238,66 +230,6 @@ def build_bimodal_edge_index_with_semantic(H, W, feat_cat, device, topk=6):
     edge_index = torch.tensor(edge_index, dtype=torch.long).T.to(device)  # [2, E]
     return edge_index
 
-# def modality_judge_masked(
-#     rgb_feat, rgb_mask,
-#     tir_feat, tir_mask,
-#     eps=1e-6, return_all=False
-# ):
-#     """
-#     Estimate modality reliability from decoupled masks; higher scores are more reliable.
-#
-#     Inputs:
-#         rgb_feat: [B, C, H, W]
-#         rgb_mask: [B, 1, H, W]
-#         tir_feat: [B, C, H, W]
-#         tir_mask: [B, 1, H, W]
-#
-#     Outputs:
-#         score_rgb, score_tir: [B], higher means more reliable.
-#
-#     Optional:
-#         return_all=True returns a dictionary with all score components.
-#     """
-#
-#     def compute_score(feat, mask):
-#         inside = (feat * mask).pow(2).mean(dim=[1, 2, 3])
-#         outside = (feat * (1 - mask)).pow(2).mean(dim=[1, 2, 3])
-#         fg_ratio = inside / (outside + eps)
-#
-#         coverage = mask.mean(dim=[1, 2, 3])
-#         coverage_score = - (coverage - 0.15).abs()
-#
-#         energy = feat.pow(2).mean(dim=1)
-#         smooth = F.avg_pool2d(energy.unsqueeze(1), 5, 1, 2).squeeze(1)
-#         structure = -(energy - smooth).abs().mean(dim=[1, 2])
-#
-#         total_score = fg_ratio + 0.5 * coverage_score + 0.5 * structure
-#
-#         return total_score, fg_ratio, coverage_score, structure
-#
-#     score_rgb, fg_r_rgb, cov_rgb, stru_rgb = compute_score(rgb_feat, rgb_mask)
-#     score_tir, fg_r_tir, cov_tir, stru_tir = compute_score(tir_feat, tir_mask)
-#
-#     if return_all:
-#         return {
-#             "score_rgb": score_rgb,
-#             "score_tir": score_tir,
-#             "rgb_detail": {
-#                 "fg_ratio": fg_r_rgb,
-#                 "coverage_score": cov_rgb,
-#                 "structure_score": stru_rgb,
-#             },
-#             "tir_detail": {
-#                 "fg_ratio": fg_r_tir,
-#                 "coverage_score": cov_tir,
-#                 "structure_score": stru_tir,
-#             }
-#         }
-#     else:
-#         return score_rgb, score_tir
-
-# ------------------------------------------------------------------------------------
-
 def build_multi_relational_edge_index(H, W, feat_cat, device, topk=6):
 
     N = H * W
@@ -400,7 +332,6 @@ def save_layer_feature_map(tokens, lens_z, lens_x, layer_idx, mode_name, save_di
     # ================= Removed the step suffix from saved filenames. =================
     filename_z = f"layer_{layer_idx}_{mode_name}_z.png"
     filename_x = f"layer_{layer_idx}_{mode_name}_x.png"
-    # ========================================================
 
     cv2.imwrite(f"{save_dir}/{filename_z}", z_color)
     cv2.imwrite(f"{save_dir}/{filename_x}", x_color)

@@ -15,16 +15,9 @@ def get_target_to_image_ratio(seq):
 
 
 class ImagenetVID(BaseVideoDataset):
-    """ Imagenet VID dataset.
+    """ImageNet VID dataset loader.
 
-    Publication:
-        ImageNet Large Scale Visual Recognition Challenge
-        Olga Russakovsky, Jia Deng, Hao Su, Jonathan Krause, Sanjeev Satheesh, Sean Ma, Zhiheng Huang, Andrej Karpathy,
-        Aditya Khosla, Michael Bernstein, Alexander C. Berg and Li Fei-Fei
-        IJCV, 2015
-        https://arxiv.org/pdf/1409.0575.pdf
-
-    Download the dataset from http://image-net.org/
+    Author: Yutong Li
     """
     def __init__(self, root=None, image_loader=jpeg4py_loader, min_length=0, max_target_area=1):
         """

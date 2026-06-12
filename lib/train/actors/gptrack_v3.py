@@ -124,9 +124,7 @@ class GPTrackActor(BaseActor):
         return out_dict
 
     def compute_losses(self, pred_dict, gt_dict, return_status=True):
-        # =======================================================
         # Debug-only check that extra outputs were propagated.
-        # =======================================================
         if self.settings.local_rank == 0:  # Print only on the main process to avoid duplicate multi-GPU logs.
             print("\n[DEBUG] Checking pred_dict keys:", pred_dict.keys())
 
@@ -141,7 +139,6 @@ class GPTrackActor(BaseActor):
                     print("   [ERROR] 'prompt_x_v' is MISSING in extra!")
             else:
                 print("   [ERROR] 'extra' key is MISSING in pred_dict! Backbone output was dropped.")
-        # =======================================================
 
 
 
