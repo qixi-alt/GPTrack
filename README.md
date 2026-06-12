@@ -127,6 +127,10 @@ python tracking/analysis_results.py \
 - `experiments/gptrack/`: configuration files for training and evaluation.
 
 
+## 🙏 Acknowledgements
+
+The ViT backbone is initialized from the pretrained OSTrack checkpoint. We appreciate the OSTrack project for its valuable open-source resources.
+
 ## 📝 Citation
 
 If GPTrack is useful for your research, please cite the related work and this repository.
