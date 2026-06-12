@@ -126,9 +126,6 @@ python tracking/analysis_results.py \
 - `lib/models/gptrack/utils.py`: token conversion utilities and multi-relation edge construction.
 - `experiments/gptrack/`: configuration files for training and evaluation.
 
-## 👤 Maintainer
-
-Yutong Li
 
 ## 📝 Citation
 
