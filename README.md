@@ -1,6 +1,6 @@
 # GPTrack
 
-## LasHeR Result Comparison
+## 📈 LasHeR Result Comparison
 
 The following OPE curves compare GPTrack with representative RGB-T trackers on the LasHeR testing set.
 
@@ -8,13 +8,13 @@ The following OPE curves compare GPTrack with representative RGB-T trackers on t
 
 [View the original PDF](assets/lasher_curve.pdf)
 
-## Highlights
+## ✨ Highlights
 
 - **Geometry-Saliency Cross-Attention (GSCA):** Integrates imaging-inspired guidance into cross-modal interaction.
 - **Multi-Relation Topology Graph (MRTG):** Builds spatial, cross-modal, and semantic edges for graph-enhanced RGB-T representation learning.
 - **LasHeR-ready Training and Evaluation:** Provides experiment configs and scripts for RGB-T tracking workflows.
 
-## Repository Structure
+## 🗂️ Repository Structure
 
 ```text
 GPTrack/
@@ -29,7 +29,7 @@ GPTrack/
 └── tracking/                  # Training, testing, and analysis entry points
 ```
 
-## Installation
+## ⚙️ Installation
 
 ```bash
 conda create -n gptrack python=3.8
@@ -37,7 +37,7 @@ conda activate gptrack
 bash install.sh
 ```
 
-## Path Setup
+## 🧭 Path Setup
 
 Initialize local paths for datasets, checkpoints, and results:
 
@@ -55,7 +55,7 @@ lib/train/admin/local.py
 lib/test/evaluation/local.py
 ```
 
-## Data Preparation
+## 🗃️ Data Preparation
 
 Place RGB-T datasets under `./data`. For LasHeR, the expected layout is:
 
@@ -68,7 +68,7 @@ data/
     └── testingsetList.txt
 ```
 
-## Pretrained Weights
+## 🧩 Pretrained Weights
 
 Place pretrained weights under:
 
@@ -78,7 +78,7 @@ pretrained_models/
 
 The default configs expect SOT/ViT initialization weights to be available locally.
 
-## Training
+## 🚀 Training
 
 Train GPTrack on LasHeR:
 
@@ -97,7 +97,7 @@ Available experiment configs are stored in:
 experiments/gptrack/
 ```
 
-## Evaluation
+## 📊 Evaluation
 
 Run tracking on the LasHeR test split:
 
@@ -119,16 +119,16 @@ python tracking/analysis_results.py \
   --dataset_name lasher_test
 ```
 
-## Core Components
+## 🧱 Core Components
 
 - `lib/models/gptrack/gptrack.py`: GPTrack model builder and tracking wrapper.
 - `lib/models/gptrack/utils.py`: token conversion utilities and multi-relation edge construction.
 - `experiments/gptrack/`: configuration files for training and evaluation.
 
-## Maintainer
+## 👤 Maintainer
 
 Yutong Li
 
-## Citation
+## 📝 Citation
 
 If GPTrack is useful for your research, please cite the related work and this repository.
